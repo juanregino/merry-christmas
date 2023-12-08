@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Mountains of Christmas", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(#a2000a,#cf0000);
+}
+
+.contenedor{
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+#maquina_escribir{
+  color: #008f39;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px #0f0;
+}
+.trees {
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  bottom: -10px;
+  width: 200%;
+  animation: pasarImagen linear infinite 10s;
+}
+
+.contianer-tree {
+  width: 100%;
+}
+.container-tree2 {
+  width: 100%;
+}
+.tree {
+  width: 100%;
+  height: 200px;
+}
+
+
+
+.contenedor .moon{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: #9fb0bf;
+  box-shadow: 0 0 20px #fff,  inset -50px 0 30px #585858, inset 40px 10px 90px #f6fbfb;
+  transition: 2s;
+}
+.moon span {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.moon span:first-child{
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-top: solid 0px transparent;
+  left: 20px;
+  top: 50%;
+
+}
+.moon span:nth-child(2){
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-top: solid 0px transparent;
+  left: 140px;
+  top: 40px;
+
+}
+.moon span:nth-child(3){
+  width: 60px;
+  height: 60px;
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-top: solid 0px transparent;
+  left: 50%;
+  top: 50%;
+
+}
+.moon span:nth-child(4){
+  background: rgba(121, 121, 121, 0.7);
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-top: solid 0px transparent;
+  left: 30%;
+  top: 30%;
+
+}
+.moon span:nth-child(5){
+  width: 30px;
+  height: 30px;
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-bottom: solid 0px transparent;
+  left: 40%;
+  top: 85%;
+
+}
+
+.moon span:nth-child(6){
+  background: rgba(121, 121, 121, 0.7);
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-top: solid 0px transparent;
+  left: 70%;
+  top: 25%;
+
+}
+.moon span:nth-child(7){
+  background: rgba(88, 88, 88, .7);
+  border: solid 4px rgba(121,121,121,0.7);
+  border-right: solid 0px transparent;
+  border-top: solid 0px transparent;
+  left: 75%;
+  top: 75%;
+
+}
+.contenedor .moon::before{
+  content: "";
+  position: absolute;
+  background: url(./img/santa.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 600px;
+  z-index: 2;
+  inset: -200px;
+  animation: animacionSanta 5s ease-in-out infinite;
+
+}
+
+.contenedor .nieve{
+  position: relative;
+  display: flex;
+}
+
+.contenedor .nieve span{
+  position: relative;
+  min-width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 1vw;
+  box-shadow: -100px 20px 5px #fff, 100px 20px 5px #fff;
+  animation: animacionNieve 15s linear infinite ;
+  animation-duration: calc(75s / var(--i));
+}
+
+.contenedor .nieve span:nth-child(even){
+  min-width: 10px;
+  height: 10px;
+}
+
+.contenedor .contenedor-timer{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer{
+  font-size: 52px;
+  color: #008f39;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px #a2000a;
+  font-weight: bold;
+  position: relative;
+  z-index: 4;
+
+}
+@keyframes animacionSanta {
+
+  0%{
+    transform: translateY(-25px) rotate(0deg);
+    
+  }
+  50%{
+    transform: translateY(25px) rotate(20deg);
+  }
+  100%{
+    transform: translateY(-25px)  rotate(0deg);
+  }
+}
+
+
+
+@keyframes pasarImagen {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes animacionNieve  {
+
+  0%{
+    transform: translateY(-10vh);
+  }
+  100%{
+    transform: translateY(100vh);
+  }
+  
+}
