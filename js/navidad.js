@@ -96,11 +96,18 @@ const getRemainTime = (deadline = "Dec 25 2023 11:59:00 GMT-0500") => {
 };
 
 const countdown = (deadline, elem, finalMessage) => {
-  const el = document.querySelector(elem);
+  const dias = document.querySelector(".dias-timer");
+  const horas = document.querySelector(".hora-timer");
+  const minutos = document.querySelector(".minutos-timer");
+  const segundos = document.querySelector(".segundos-timer");
 
   const timerUpdate = setInterval(() => {
     let timer = getRemainTime(deadline);
-    el.innerHTML = `$dias ${timer.remainDays} horas ${timer.remainHours} minutos ${timer.remainMinutes} segundos ${timer.remainSecons}`;
+    dias.innerHTML = `${timer.remainDays}`;
+    horas.innerHTML = `${timer.remainHours}`;
+    minutos.innerHTML = `${timer.remainMinutes}`;
+    segundos.innerHTML = `${timer.remainSecons}`;
+
     if (timer.remainTime <= 1) {
       clearInterval(timerUpdate);
       el.innerHTML = finalMessage;
@@ -111,4 +118,11 @@ const countdown = (deadline, elem, finalMessage) => {
 console.log(
   countdown("Dec 25 2023 11:59:00 GMT-0500", ".timer", "Feliz Navidad")
 );
+
+const audio = document.querySelector('#audio')
+audio.play()
+audio.loop = true
+
+
+
 
