@@ -233,3 +233,18 @@ body{
   }
   
 }
+
+@media (max-width: 700px) {
+ .contenedor .moon::before{
+  content: "";
+  position: absolute;
+  background: url(./img/santa.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 450px;
+  z-index: 2;
+  inset: -200px;
+  animation: animacionSanta 5s ease-in-out infinite;
+
+}
+}
